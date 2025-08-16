@@ -29,7 +29,7 @@ console.log(Math.floor(4.3)) // it round of the value to lowest like 4.9 => 4
 console.log(Math.min(4, 8 , 9 , 1 , 3)) // it shows the smallest value in the array
 console.log(Math.max(4, 8 , 9 , 1 , 3)); //it shows the highest value in the array
 
-console.log(Math.random())
+console.log(Math.random()) //randomly generate number between 0-1 (in points like 0.212331)
 console.log((Math.random()*10) + 1)
 console.log(Math.floor(Math.random()*10) + 1)
 
