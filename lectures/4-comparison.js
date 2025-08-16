@@ -1,8 +1,10 @@
+// To run this file, use the command: node 4-comparison.js
 console.log(2 > 1); // true
 console.log(2 >= 1); // true
 console.log(2 < 1); // false
 console.log(2 <= 1); // false
 console.log(2 == 1); // false
+console.log(2 != 1); // true
 console.log(2 != 1); // true
 
 
