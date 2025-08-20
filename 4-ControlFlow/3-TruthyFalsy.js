@@ -40,7 +40,7 @@ val1 = null ?? undefined ?? 10 ?? 50
 console.log(val1);
 
 
-// Ternary Operator
+// Ternary Operator 
 
 // condition ? true : false
 
