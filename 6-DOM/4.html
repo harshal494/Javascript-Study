@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+            <li>Javascript</li>
+
+    </ul>
+</body>
+<script>
+    
+    function addLanguge(langName){
+        const li = document.createElement('li')
+        li.innerHTML = langName
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguge('Python')
+    addLanguge('Java')
+
+    //we create defination once now we dont need to create another funncton for adding the li . below i just write code for practice 
+
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li');
+        //const addLang = document.createTextNode(langName)  // this way also we can add lang but we save some space here 
+        //li.appendChild(addLang)
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('Go')
+
+    const chai = ((nav) => {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(nav))
+        document.querySelector('.language').appendChild(li)
+        return nav
+     })
+     console.log(chai('Ruby'))
+
+
+     function newlang(lang){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(lang))
+        document.querySelector('.language').appendChild(li)
+     }
+     newlang('C++')
+     newlang('C#')
+
+
+
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur code</title>
+</head>
+<body class="bg-color" style="background-color: #212121; color: #fff;">
+    
+</body>
+
+<script>
+    const div = document.createElement('div')
+    console.log(div)
+    div.className = "main"
+    div.id = Math.round(Math.random()*10+1)
+    div.setAttribute("title", "Chai aur Code")  // setAttribute(key, value) used to set the attribute on SCREEN
+    div.style.backgroundColor = "green"
+    div.style.padding = "15px"
+    div.style.borderRadius = "25px"
+
+    //div.innerText = "Chai aur Code"   // its also used but not prefered by chai aur code
+
+    const AddedText = document.createTextNode("Chai aur Code")
+    div.appendChild(AddedText)
+
+    document.body.appendChild(div)
+
+
+   
+</script>
+
+</html>
