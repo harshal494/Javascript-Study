@@ -15,7 +15,7 @@
     
     function addLanguge(langName){
         const li = document.createElement('li')
-        li.innerHTML = langName
+        li.innerHTML = langName    // by using this method it traverse all the tree and its lengthy process
         document.querySelector('.language').appendChild(li)
     }
     addLanguge('Python')
@@ -61,6 +61,50 @@
      })
      console.log(Harsh('Rust'))
 
+
+     // Edit the li list 
+
+     const fourthValue = document.querySelector('li:nth-child(5)')
+     // fourthValue.innerHTML = 'R'  // this can be used to replace your values but its not optimized way
+     const newli = document.createElement('li')
+     newli.textContent = 'R'
+     fourthValue.replaceWith(newli)
+
+
+     // try another way
+
+     const final = document.querySelector('li:last-child')
+     final.outerHTML = '<li>CSS</li>'
+
+
+     // for practice
+
+     const java = document.querySelector('li:nth-child(3)')
+     const jv = document.createElement('li')
+     jv.textContent = 'Java & Spring Boot'
+     java.replaceWith(jv)
+
+
+     //now for Python
+
+     const python = document.querySelector('li:nth-child(2)')
+     const py = document.createElement('li')
+     py.textContent = 'Python & Django'
+     python.replaceWith(py)
+
+
+     // Go for Google
+
+     const go = document.querySelector('li:nth-child(4)')
+     const g = document.createElement('li')
+     g.textContent = 'Go for Google'
+     go.replaceWith(g)
+
+
+     // Remove li 
+
+     const last = document.querySelector('li:last-child')
+     last.remove()  // it removes the element you want ,jus t tell the querySelector hich value you want to delete
 
 
 </script>
