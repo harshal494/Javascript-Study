@@ -51,6 +51,17 @@
      newlang('C#')
 
 
+     //Arrow function 
+
+     const Harsh = ( (lang) => {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(lang))
+        document.querySelector('.language').appendChild(li)
+        return lang
+     })
+     console.log(Harsh('Rust'))
+
+
 
 </script>
 </html>
