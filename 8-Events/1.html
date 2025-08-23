@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Events</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <h2>Amazing Images</h2>
+    <div>
+      <ul id="Images">
+        <li>
+          <img
+            width="200px"
+            id="img"
+            src="https://imgs.search.brave.com/iUK7ouIt0j8pjzKwjHRYGQ7ld-JL1iNW8TT4fBYnf0M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTE0/NzUyMTY5NS9waG90/by90aGUtY2FwaXRh/bC1sZXR0ZXItcy5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/WGVEWGlGbjdfZmtJ/MWJjczh0ZnFlVHEz/TThzOTlCSnRzMFk0/ei1aNGxtVT0"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    //document.getElementById('img').onclick = function(){
+    //  alert('S clicked')
+    //}
+
+    //attachEvent()
+    //jQuery - on
+
+    //need to study
+    // type , timestamp , defaultPrevented
+    //target , toElement , srcElement , currentTarget
+    //clintX, ClientY, screenX, screenY
+    //altKey, ctrlKey, shiftKey, keyCode
+
+    document.getElementById("Images").addEventListener(
+      "click",
+      function (e) {
+        console.log("Clicked inside the ul");
+      },
+      false
+    );
+
+    document.getElementById("img").addEventListener(
+      "click",
+      function (e) {
+        console.log("Clicked on the image");
+        e.stopPropagation();    // this method used to stop the bubble event
+                                //when img clicked ,only img clicked shows in console not img clicked and ul clicked
+                                //it stops the priority method here
+                                //at first which img click it shows that and then stop click Events
+      },false
+    );
+
+    // event progation and it ffollows event bubbling inn which the first click gets the first priority,like above code whatever img we click ul msg will print 
+    //but when i clicked on my img then priorit was my img and then ul clicked and thats why we use false in the last ,which is default 0 means false
+    //in true it reverse called capturing event like top down approach
+
+
+    document.getElementById('google').addEventListener('click', function(e){
+        
+        console.log('Google Clicked ')
+        e.preventDefault()
+        e.stopPropagation()
+    },false)
+
+
+    document.querySelector('#Images').addEventListener
+    ('click', function (e){
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+        }
+        console.log(e.target.parentNode);
+        let removeIt = e.target.parentNode
+        //removeIt.remove()
+        removeIt.parentNode.removeChild(removeIt)
+    })
+
+
+  </script>
+</html>
