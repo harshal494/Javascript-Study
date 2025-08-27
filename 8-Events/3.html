@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    
+    const loop = function(str){
+        console.log(str, Date.now())
+    }
+    
+    let intervalId;
+
+    document.querySelector('#start').addEventListener('click', function(){
+        if (!intervalId) {
+            intervalId = setInterval(loop, 1000, 'Harshal');
+            console.log('Loop started');
+        }
+    });
+    
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearInterval(intervalId);
+        intervalId = null; // Dereference the intervalId to allow starting again
+        console.log('Loop stopped');
+    });
+
+</script>
+</html>
