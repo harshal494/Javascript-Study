@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    anthing written here is what you should know
+    <img src="https://avatars.githubusercontent.com/u/200349904?v=4" alt="pic">
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/harshal494'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', requestUrl)  // or here you can write your api in ' '
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText)
+            console.log(data.followers)
+            console.log(data.avatar_url)
+
+        }
+    }
+    xhr.send()
+</script>
+</html>
